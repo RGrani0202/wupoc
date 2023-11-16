@@ -1,0 +1,46 @@
+
+
+/* header{
+    background: #212A33;
+} */
+.wu-header{
+    background: #212A33;
+    height: 60px;
+}
+.wu-header img {
+    height: 50px;
+    position: absolute;
+    /* top :1%; */
+    left: 9%;
+}
+.header-right{
+    float: right;
+    position: relative;
+    right: 18%;
+}
+.header-right a {
+    float: left;
+    text-decoration: none;
+    color: whitesmoke;
+    text-align: center;
+    padding: 12px;
+    font-size: 19px; 
+    line-height: 25px;
+    border-radius: 4px;
+   
+    
+  }
+
+  .logout{
+    float:right;
+    color: whitesmoke;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 19px; 
+    line-height: 25px;
+    border-radius: 4px;
+   
+
+
+  }

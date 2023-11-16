@@ -1,0 +1,11 @@
+{
+"usa": {  
+      "isFirstNameRequired": true,  
+      "isLastNameRequired": false, 
+      "isEmailRequired": true  },
+"india":{
+    "isFirstNameRequired":true,
+    "isLastNameRequired":true,
+    "isEmailRequired":true
+}
+}    

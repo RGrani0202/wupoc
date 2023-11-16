@@ -1,0 +1,53 @@
+.my-receiver-body{
+    background-color:  #EBECE7;
+    
+}
+.main-text{
+margin: 25px 0px 0px 300px;
+}
+.table-row{
+    /* width: 100vw; */
+    height: 13vh;
+   
+    /* background:white; */
+
+}
+.table-row th{
+    margin-top: 2%;
+    padding: 10px;
+    width:150px;
+    height: 11vh;
+    background:white;
+}
+.tablebox{
+    width: 50%;
+    height: 50%;
+    margin: 5% 5% 3% 5%;
+    display: inline-block;
+     /* box-shadow: 1px 1px 10px 1px lightblue; */
+    transform: translate(40%, 5%);
+    /* background-color: #f7f7f5;; */
+    font-family:'Open Sans', sans-serif;
+
+}
+.addrs{
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: space-evenly;
+}
+.addrs button{
+    width: 50%;
+    margin: 0% 2% 1% 2%;
+    height: 8vh;
+    /* padding: 2%; */
+    background-color: #045F86;
+    color: white;
+    border: none;
+    border-radius: 2px;
+}
+.table{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+}

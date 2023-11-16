@@ -1,0 +1,91 @@
+<div>
+  <form #addReceiver="ngForm" (ngSubmit)="continue(addReceiver.value)">
+    <div class="resbox">
+      <h3>Receiver's Information</h3>
+
+      <div class="textfield email">
+        <!-- <i class="fa-sharp fa-solid fa-envelope" style="color: #cececf"></i> -->
+        <h4>For your saftey, make sure you know your receiver</h4>
+
+        <select class="countrybox" name="country" [(ngModel)]="selectedCountry">
+          <option hidden selected value="country">Country name</option>
+          <option *ngFor="let country of countries" [value]="country">
+            {{ country }}
+          </option>
+        </select>
+        <br /><br />
+
+        <div class="subHeading">
+          <h4>Receiver's Personal Information</h4>
+        </div>
+        <div class="infobox">
+          <input
+            required
+            type="text"
+            class="text-input-name"
+            name="firstname"
+            placeholder="Receiver's firstname"
+            ngModel
+          /><br /><br />
+          <input
+            #lastname="ngModel"
+            required
+            *ngIf="isLastNameRequired()"
+            type="text"
+            class="text-input-name"
+            name="lastname"
+            placeholder="Receiver's Lastname"
+            ngModel
+          /><br /><br />
+
+        </div>
+        <div class="infobox">
+          <input
+            #email="ngModel"
+            required
+            *ngIf="isEmailRequired()"
+            type="email"
+            class="text-input-middlename"
+            name="email"
+            placeholder="Receiver's email"
+            ngModel
+          /><br />
+        </div>
+       
+
+        <br /><br />
+        <div class="endbox">
+          <input
+            type="text"
+            class="text-input-type"
+            name="type"
+            ngModel
+          /><br /><br />
+          <input
+            required
+            type="text"
+            class="text-input-type"
+            name="countrycode"
+            placeholder="country code"
+            ngModel
+          /><br /><br />
+          <input
+            required
+            type="text"
+            class="text-input-no"
+            name="mobileno"
+            placeholder="Receiver's mobileno (optional)"
+            ngModel
+          /><br /><br />
+        </div>
+      </div>
+
+      <div class="add">
+        <button type="submit">Add Receiver</button>
+      </div>
+      <div class="cancel">
+        <button routerLink="/my-receivers">Cancel</button>
+      </div>
+    </div>
+  </form>
+</div>

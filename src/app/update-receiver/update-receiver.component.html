@@ -1,0 +1,106 @@
+<div>
+  <form #updateReceiver="ngForm" (ngSubmit)="update(updateReceiver.value)">
+    <div class="resbox">
+      <h3>Receiver's Information</h3>
+      <div class="textfield email">
+        <h4>For your saftey, make sure you know your receiver</h4>
+        <!-- <select class="countrybox" name="country" [(ngModel)]="receiverById.country"> -->
+          <!-- <option hidden selected value="country">Country name</option>
+          <option *ngFor="let country of countries" [value]="country">
+            {{ country }}
+          </option> -->
+        <!-- </select> -->
+        <select
+          class="countrybox"
+          name="country"
+          [(ngModel)]="receiverById.country"
+          (ngModelChange)="onCountrChange($event)"
+          required
+        >
+          <option hidden selected value="country">Country name</option>
+          <option *ngFor="let country of countries" [value]="country">
+            {{ country }}
+          </option>
+        </select>
+        <br/>
+        <br/>
+        
+        <div class="subHeading">
+          <h4>Receiver's Personal Information </h4>
+       </div>
+        <div class="infobox">
+          <input
+            type="text"
+            class="text-input-name"
+            name="firstname"
+            placeholder="Receiver's firstname"
+            [(ngModel)]="receiverById.firstname"
+          />
+          <br /><br />
+          
+          <input
+            required
+            *ngIf="isLastNameRequired()"
+            type="text"
+            class="text-input-name"
+            name="lastname"
+            placeholder="Receiver's lastname"
+            [(ngModel)]="receiverById.lastname"
+          />
+          <br /><br />
+              
+</div>
+<div class="infobox">
+
+          <input
+          required
+          *ngIf="isEmailRequired()"
+          type="email"
+          class="text-input-middlename"
+          name="email"
+          placeholder="Receiver's email"
+            [(ngModel)]="receiverById.email"
+          />
+          <br /><br />
+        </div>
+
+        <div class="endbox">
+        <input
+          type="text"
+          class="text-input-type"
+          name="type"
+          [(ngModel)]="receiverById.type"
+        />
+        <br /><br />
+        <input
+          type="text"
+          class="text-input-type"
+          name="countrycode"
+          placeholder="country code"
+          [(ngModel)]="receiverById.countrycode"
+        />
+        <br /><br />
+
+        <input
+          type="text"
+          class="text-input-no"
+          name="mobileno"
+          placeholder="Receiver's mobileno (optional)"
+          [(ngModel)]="receiverById.mobileno"
+        /><br /><br />
+      </div>
+      </div>
+
+
+      <div class="update">
+        <button type="submit">Update Receiver</button>
+      </div>
+
+      <div class="cancel">
+        <button routerLink="/my-receivers">Cancel</button>
+      </div>
+    </div>
+  </form>
+</div>
+<!-- <p *ngFor="let receiver of receiverById">{{ receiver.firstname }}</p> -->
+<!-- <p>{{receiverById.id}}</p> -->

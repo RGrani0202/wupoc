@@ -1,0 +1,79 @@
+{
+  "receivers": [
+    {
+      "country": "usa",
+      "firstname": "test",
+      "type": "9899",
+      "countrycode": "98",
+      "mobileno": "098765432",
+      "email": "test@123",
+      "id": 1
+    },
+    {
+      "country": "india",
+      "firstname": "kjhgfds",
+      "type": "09",
+      "countrycode": "o987",
+      "mobileno": "9876098765432",
+      "middlename": "kjhgfcx",
+      "email": "lkjhgf",
+      "id": 2
+    },
+    {
+      "country": "usa",
+      "firstname": "test",
+      "type": "",
+      "countrycode": "",
+      "mobileno": "",
+      "email": "",
+      "id": 3
+    },
+    {
+      "country": "india",
+      "firstname": "test2",
+      "type": "",
+      "countrycode": "",
+      "mobileno": "",
+      "id": 4
+    },
+    {
+      "country": "india",
+      "firstname": "test10",
+      "type": "",
+      "countrycode": "",
+      "mobileno": "",
+      "lastname": "kjhgf",
+      "email": "uytr",
+      "id": 5
+    },
+    {
+      "country": "usa",
+      "firstname": "uytre",
+      "type": "",
+      "countrycode": "",
+      "mobileno": "",
+      "lastname": "test",
+      "email": "kjhg",
+      "id": 6
+    }
+  ],
+  "country": [
+    {
+      "usa": {
+        "isFirstNameRequired": true,
+        "isLastNameRequired": false,
+        "isEmailRequired": true
+      },
+      "india": {
+        "isFirstNameRequired": true,
+        "isLastNameRequired": true,
+        "isEmailRequired": true
+      },
+      "japan": {
+        "isFirstNameRequired": true,
+        "isLastNameRequired": false,
+        "isEmailRequired": false
+      }
+    }
+  ]
+}
