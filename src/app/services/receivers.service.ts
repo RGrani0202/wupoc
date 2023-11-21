@@ -13,7 +13,6 @@ configurl="http://localhost:3000/country";
     return this.http.get(this.url)
     
   }
-
   getReceiverById(receiverId:number){
     return this.http.get(`${this.url}/${receiverId}`)
   }
@@ -25,7 +24,6 @@ configurl="http://localhost:3000/country";
     //   console.log(result);
     // })
   }
-
   deleteReceiver(receiverId: number){
     return this.http.delete(`${this.url}/${receiverId}`)
 
@@ -35,8 +33,7 @@ configurl="http://localhost:3000/country";
   }
  
  // get country for configuration
-
- getConfig(){
+getConfig(){
   return this.http.get(this.configurl);
  }
 }

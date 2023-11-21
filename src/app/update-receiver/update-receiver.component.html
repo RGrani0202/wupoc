@@ -4,26 +4,17 @@
       <h3>Receiver's Information</h3>
       <div class="textfield email">
         <h4>For your saftey, make sure you know your receiver</h4>
-        <!-- <select class="countrybox" name="country" [(ngModel)]="receiverById.country"> -->
-          <!-- <option hidden selected value="country">Country name</option>
-          <option *ngFor="let country of countries" [value]="country">
-            {{ country }}
-          </option> -->
-        <!-- </select> -->
         <select
           class="countrybox"
           name="country"
           [(ngModel)]="receiverById.country"
-          (ngModelChange)="onCountrChange($event)"
-          required
-        >
+          (ngModelChange)="onCountryChange($event)"
+          required>
           <option hidden selected value="country">Country name</option>
           <option *ngFor="let country of countries" [value]="country">
             {{ country }}
-          </option>
-        </select>
-        <br/>
-        <br/>
+          </option></select>
+        <br/><br/>
         
         <div class="subHeading">
           <h4>Receiver's Personal Information </h4>
@@ -65,16 +56,15 @@
         </div>
 
         <div class="endbox">
-        <input
-          type="text"
-          class="text-input-type"
-          name="type"
-          [(ngModel)]="receiverById.type"
-        />
+        <select name="type"  class="text-input-type" [(ngModel)]="receiverById.type">
+          <option value="" disabled selected>Type</option>
+          <option *ngFor="let type of types" [value]="type">
+            {{ type }}
+          </option>
+        </select>
         <br /><br />
         <input
           type="text"
-          class="text-input-type"
           name="countrycode"
           placeholder="country code"
           [(ngModel)]="receiverById.countrycode"

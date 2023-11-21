@@ -18,6 +18,7 @@
         <div class="subHeading">
           <h4>Receiver's Personal Information</h4>
         </div>
+
         <div class="infobox">
           <input
             required
@@ -27,6 +28,7 @@
             placeholder="Receiver's firstname"
             ngModel
           /><br /><br />
+
           <input
             #lastname="ngModel"
             required
@@ -37,7 +39,6 @@
             placeholder="Receiver's Lastname"
             ngModel
           /><br /><br />
-
         </div>
         <div class="infobox">
           <input
@@ -51,16 +52,17 @@
             ngModel
           /><br />
         </div>
-       
 
         <br /><br />
         <div class="endbox">
-          <input
-            type="text"
-            class="text-input-type"
-            name="type"
-            ngModel
-          /><br /><br />
+          <select name="type" class="text-input-type" #type="ngModel" ngModel required>
+            <option value="" disabled selected>Type</option>
+            <option *ngFor="let type of types" [value]="type">
+              {{ type }}
+            </option>
+          </select>
+          <br /><br />
+
           <input
             required
             type="text"
@@ -74,14 +76,16 @@
             type="text"
             class="text-input-no"
             name="mobileno"
-            placeholder="Receiver's mobileno (optional)"
+            placeholder="Receiver's mobileno "
             ngModel
           /><br /><br />
         </div>
       </div>
 
       <div class="add">
-        <button type="submit">Add Receiver</button>
+        <button type="submit" [disabled]="!addReceiver.form.valid">
+          Add Receiver
+        </button>
       </div>
       <div class="cancel">
         <button routerLink="/my-receivers">Cancel</button>

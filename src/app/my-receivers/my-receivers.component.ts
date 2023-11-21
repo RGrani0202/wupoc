@@ -30,11 +30,7 @@ export class MyReceiversComponent implements OnInit {
       
     })
   }
-  navigateToAdd(){
-// 
-console.log("called navigate");
 
-  }
   ngDocheck():void{
     console.log(this.receiverList);
     

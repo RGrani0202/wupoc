@@ -11,63 +11,63 @@ import { ReceiversService } from '../services/receivers.service';
 export class HeaderComponent implements OnInit {
   myReceiver: boolean = false;
   addReceiver: boolean = false;
-  logOut:boolean = true;
+  logOut: boolean = true;
   changeHeader: boolean;
- 
-  constructor(private route: Router, private auth:AuthService) {
-   
-   }
+
+  constructor(private route: Router, private auth: AuthService) {
+
+  }
 
   ngOnInit(): void {
 
-    console.log(this.route.events.subscribe((value)=>{
+    console.log(this.route.events.subscribe((value) => {
       console.log(value);
     }));
-    
-   
 
 
 
-    this.route.events.subscribe((value:any)=>{
-      
-      if(value.url){
 
-        if(value.url==="/"){
-          this.logOut=false;
-        }
-       
-        else{
-          this.logOut=true;
-          
+
+    this.route.events.subscribe((value: any) => {
+
+      if (value.url) {
+
+        if (value.url === "/") {
+          this.logOut = false;
         }
 
+        else {
+          this.logOut = true;
 
-        if(value.url==="/add-receiver  " ){
-          this.myReceiver=true;
         }
-       
-        else{
-          this.myReceiver=false;
-          
+
+
+        if (value.url === "/add-receiver") {
+          this.myReceiver = true;
         }
-        if(value.url==="/my-receivers"){
-          this.addReceiver=true;
+
+        else {
+          this.myReceiver = false;
+
         }
-       
-        else{
-          this.addReceiver=false;
-          
+        if (value.url === "/my-receivers") {
+          this.addReceiver = true;
+        }
+
+        else {
+          this.addReceiver = false;
+
         }
       }
-      
-      
 
-      
+
+
+
     })
   }
-logfun(){
-  this.auth.logOut();
-}
+  logfun() {
+    this.auth.logOut();
+  }
 
 }
 

@@ -12,9 +12,12 @@ export class UpdateReceiverComponent implements OnInit {
   selectedCountry: string;
   countryData: any = {};
   countries: any = [];
-
-  constructor(private route: Router, private router:ActivatedRoute, private receiver:ReceiversService) { }
-  onCountrChange(value: string){
+  types = ["Mobile", "Telephone"];
+  constructor(private route: Router, private router:ActivatedRoute, private receiver:ReceiversService) {
+    
+   }
+  onCountryChange(value: string){
+    console.log( this.receiverById);
     this.selectedCountry=value;
     }
 
@@ -76,9 +79,7 @@ export class UpdateReceiverComponent implements OnInit {
             check = false;
         }
   
-      }
-  
-  
+      } 
       else {
         check = true;
       }
@@ -91,6 +92,7 @@ export class UpdateReceiverComponent implements OnInit {
     this.receiver.getReceiverById(this.router.snapshot.params.id)
     .subscribe((result:any)=>{
       this.receiverById=result;
+      this.selectedCountry=this.receiverById.country;
       console.log(result.id);
     })
 

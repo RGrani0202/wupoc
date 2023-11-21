@@ -1,24 +1,22 @@
 <div class="my-receiver-body">
   <h2 class="main-text">Receivers</h2>
   <div class="tablebox">
-    <table class="table">                                                           
+    <table class="table">   
+                                              
       <tr *ngFor="let receiver of receiverList" class="table-row">
         <th><i class="fa-solid fa-globe" style="color: #3661ab"></i></th>
         <th>{{ receiver.firstname | titlecase}}</th>
         <th>show Details</th>
-        <th>
-          <a routerLink="/update-receiver/{{ receiver.id }}">
-            <i class="fa-solid fa-pen-to-square" style="color: #3661ab"></i>
-          </a>
-        </th>
+        <th><a routerLink="/update-receiver/{{ receiver.id }}">
+            <i class="fa-solid fa-pen-to-square" style="color: #3661ab"></i></a></th>
         <th>
           <i
             (click)="deleteRes(receiver.id)"
             class="fa-solid fa-trash"
             style="color: #3661ab"
-          ></i>
-        </th>
-      </tr>
+          ></i></th></tr>
+  
+       
     </table>
   </div>
   <div class="addrs">

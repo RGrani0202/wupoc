@@ -24,4 +24,19 @@ describe('LoginComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should have a form with email and password fields', () => {
+    const compiled = fixture.debugElement.nativeElement;
+    const form = compiled.querySelector('form');
+    expect(form).toBeTruthy();
+ 
+    const emailInput = compiled.querySelector('input[name="email"]');
+    expect(emailInput).toBeTruthy();
+ 
+    const passwordInput = compiled.querySelector('input[name="password"]');
+    expect(passwordInput).toBeTruthy();
+  });
+
+ 
+ 
 });

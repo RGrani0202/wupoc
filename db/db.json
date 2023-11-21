@@ -3,58 +3,77 @@
     {
       "country": "usa",
       "firstname": "test",
-      "type": "9899",
+      "type": "Telephone",
       "countrycode": "98",
-      "mobileno": "098765432",
-      "email": "test@123",
+      "mobileno": "9876543210",
+      "email": "rani@gmail.com",
       "id": 1
     },
     {
-      "country": "india",
-      "firstname": "kjhgfds",
-      "type": "09",
-      "countrycode": "o987",
-      "mobileno": "9876098765432",
-      "middlename": "kjhgfcx",
-      "email": "lkjhgf",
+      "country": "japan",
+      "firstname": "test2",
+      "type": "Mobile",
+      "countrycode": "98",
+      "mobileno": "9876543210",
       "id": 2
     },
     {
-      "country": "usa",
+      "country": "japan",
       "firstname": "test",
-      "type": "",
-      "countrycode": "",
-      "mobileno": "",
-      "email": "",
+      "type": "Mobile",
+      "countrycode": "98",
+      "mobileno": "9876543210",
       "id": 3
     },
     {
-      "country": "india",
-      "firstname": "test2",
-      "type": "",
-      "countrycode": "",
-      "mobileno": "",
+      "country": "japan",
+      "firstname": "test6",
+      "type": "Mobile",
+      "countrycode": "98",
+      "mobileno": "9876543210",
       "id": 4
     },
     {
-      "country": "india",
-      "firstname": "test10",
-      "type": "",
-      "countrycode": "",
-      "mobileno": "",
-      "lastname": "kjhgf",
-      "email": "uytr",
+      "country": "japan",
+      "firstname": "test",
+      "type": "Mobile",
+      "countrycode": "98",
+      "mobileno": "987654",
       "id": 5
     },
     {
       "country": "usa",
-      "firstname": "uytre",
-      "type": "",
-      "countrycode": "",
-      "mobileno": "",
-      "lastname": "test",
-      "email": "kjhg",
+      "firstname": "iuytr",
+      "countrycode": "iuyt",
+      "mobileno": "okijuhgf",
+      "email": "uytre",
       "id": 6
+    },
+    {
+      "country": "usa",
+      "firstname": "iuytfdsz",
+      "type": "Mobile",
+      "countrycode": "09",
+      "mobileno": "987654321",
+      "email": "kjuyhgfdxz",
+      "id": 7
+    },
+    {
+      "country": "usa",
+      "firstname": "test",
+      "type": "Mobile",
+      "countrycode": "98",
+      "mobileno": "0987654321",
+      "email": "09876543",
+      "id": 8
+    },
+    {
+      "country": "japan",
+      "firstname": "oiuytresa",
+      "type": "Mobile",
+      "countrycode": "98",
+      "mobileno": "98765432",
+      "id": 9
     }
   ],
   "country": [
@@ -62,7 +81,8 @@
       "usa": {
         "isFirstNameRequired": true,
         "isLastNameRequired": false,
-        "isEmailRequired": true
+        "isEmailRequired": true,
+        "img":"/wureceiver/src/assetsunitedstates.png"
       },
       "india": {
         "isFirstNameRequired": true,

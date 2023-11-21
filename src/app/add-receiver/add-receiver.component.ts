@@ -15,8 +15,10 @@ export class AddReceiverComponent implements OnInit {
   countryData: any = {};
   countries: any = [];
   receiverList: Array<Object> = [];
+  types = ["Mobile", "Telephone"];
 
-  constructor(private router: Router, private auth: AuthService, private receiver: ReceiversService, private http: HttpClient) {
+  constructor(private router: Router, private auth: AuthService, 
+    private receiver: ReceiversService, private http: HttpClient) {
 
   }
 
@@ -26,8 +28,7 @@ export class AddReceiverComponent implements OnInit {
       alert("receiver added !");
       this.router.navigate(['/my-receivers']);
     })
-
-  }
+   }
   isEmailRequired() {
     const country = this.selectedCountry
     let check = false;
@@ -36,7 +37,7 @@ export class AddReceiverComponent implements OnInit {
 
     // console.warn(this.countryData[0].usa.isFirstNameRequired);
     // console.log(this.selectedCountry);
-
+  
     if (country && this.countryData) {
       switch (country) {
         case 'usa': {
@@ -46,18 +47,13 @@ export class AddReceiverComponent implements OnInit {
         // console.log(this.countryData[0].usa.isLastNameRequired);
           case 'india':
           // console.log(this.countryData[0].india.isLastNameRequired);
-
           {
             check = this.countryData[0].india.isEmailRequired;
           }
           break;
         default:
           check = false;
-      }
-
-    }
-
-
+      }}
     else {
       check = false;
     }
@@ -87,8 +83,6 @@ export class AddReceiverComponent implements OnInit {
       }
 
     }
-
-
     else {
       check = false;
     }

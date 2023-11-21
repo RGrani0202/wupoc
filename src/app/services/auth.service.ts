@@ -3,8 +3,6 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs/internal/Observable';
 import { of } from 'rxjs/internal/observable/of';
 import { throwError } from 'rxjs/internal/observable/throwError';
-// import { Observable, of, throwError } from 'rxjs';
-
 @Injectable({
   providedIn: 'root'
 })
@@ -22,7 +20,7 @@ export class AuthService {
   }
  
   Islogin(value: any):Observable<any> {
-    if (value.email === "test" && value.password === "123") {
+    if (value.email === "test@hcl.com" && value.password === "123") {
       this.loggedIn = true;
       return of({name:'Test Test', email:'test'})
     }

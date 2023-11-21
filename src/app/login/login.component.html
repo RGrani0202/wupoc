@@ -8,29 +8,24 @@
             <a href="#/register">Register</a>
           </div>
         </h2>
-
         <div class="textfield email">
           <!-- <i class="fa-sharp fa-solid fa-envelope" style="color: #cececf"></i> -->
           <input
             #email="ngModel"
             ngModel
-            type="text"
+            type="email"
             class="text-input"
             name="email"
             placeholder="Email"
             required
           />
-          
         </div>
         <div>
-        <span  *ngIf="email.invalid && email.touched" class="error"> email required !
-        </span>
+          <span *ngIf="email.invalid && email.touched" class="error">
+            email required !
+          </span>
         </div>
-
-      
-
         <div class="textcheck"><input type="checkbox" />Remember me</div>
-
         <div class="textfield password">
           <!-- <i class="fa-solid fa-lock" style="color: #cececf"></i> -->
           <input
@@ -42,14 +37,12 @@
             placeholder="Password"
             required
           />
-         
         </div>
         <div>
-        <span  *ngIf="password.invalid && password.touched" class="error"> password required !
-
-        </span>
-    </div>
-
+          <span *ngIf="password.invalid && password.touched" class="error">
+            password required !
+          </span>
+        </div>
         <div class="text">
           <a href="#">Forgot Password?</a>
         </div>
