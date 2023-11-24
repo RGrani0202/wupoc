@@ -6,11 +6,16 @@ import{UpdateReceiverComponent}from "./update-receiver/update-receiver.component
 import{LoginComponent}from"./login/login.component";
 import { AuthGuard } from './guards/auth.guard';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { SendMoneyComponent } from './send-money/send-money.component';
 
 const routes: Routes = [
   {
     path:"",
     component:LoginComponent
+  },
+  {
+    path:"send-money",
+    component:SendMoneyComponent
   },
   {
     path:"add-receiver", canActivate:[AuthGuard],

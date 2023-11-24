@@ -28,7 +28,7 @@
     width: 94%;
     height:8vh;
     transform: translate(2.4%);
-    color: rgb(77, 75, 75);
+    /* color: rgb(77, 75, 75); */
 }
 
 .infobox{
@@ -70,12 +70,12 @@
    }
 
    .text-input-name{
-    width: 47%;
+    width: 100%;
     height:8vh;
     margin-left:2.2%;
    }
    .text-input-middlename{
-    width:47%;
+    width:100%;
     margin: 2% 2% 0% 2%;
     height:8vh;
    }
@@ -105,11 +105,87 @@
    .error{
     font-size: small;
     color: rgb(236, 72, 72);
-    margin-left: 560px;
-}
+    margin: 10px 0 0 25px ;
+   }
+   .error1{
+    font-size: small;
+    color:transparent;
+    margin: 10px 0 0 25px ;
+   }
+
 .errorr{
     font-size: small;
     color: rgb(236, 72, 72);
-    margin-left: 25px;
-    margin-top: 0%;
+    margin-left: 325px;
+    margin-top: 10px;
 }
+.errorr1{
+    font-size: small;
+    color:transparent;
+    margin-left: 325px;
+    margin-top: 10px;
+}
+.error-div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    width:50%;
+
+}
+.container-email{
+    display: flex;
+    flex-direction: column;
+    width:93%;
+    margin-left: 10px;
+
+}
+/* dropdown */
+.country-flag{
+    width:35px;
+    height: 32px;
+    margin-right: 10px;
+}
+ 
+.custom-dropdown {
+    position: relative;
+    display: inline-block;
+  }
+   
+  .selected-country {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 8px;
+    border: 1px solid;
+    border-radius: 4px;
+  }
+   
+  .dropdown-list {
+  
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    z-index: 1;
+  }
+   
+  .dropdown-list div {
+    padding: 8px;
+    cursor: pointer;
+    border-top: 1px solid #ccc;
+  }
+   
+  .dropdown-list div:hover {
+    background-color: #f0f0f0;
+  } 
+
+ 

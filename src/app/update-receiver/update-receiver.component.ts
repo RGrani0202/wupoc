@@ -12,6 +12,9 @@ export class UpdateReceiverComponent implements OnInit {
   selectedCountry: string;
   countryData: any = {};
   countries: any = [];
+  imgurl:any;
+ 
+  showDropdown: boolean = false;
   types = ["Mobile", "Telephone"];
   constructor(private route: Router, private router:ActivatedRoute, private receiver:ReceiversService) {
     
@@ -44,6 +47,29 @@ export class UpdateReceiverComponent implements OnInit {
               check = this.countryData[0].india.isEmailRequired;
             }
             break;
+            case 'japan':
+          {
+            check = this.countryData[0].japan.isEmailRequired;
+          }
+          break;
+          
+          case 'canada':
+          {
+            check = this.countryData[0].canada.isEmailRequired;
+          }
+          break;
+          
+          case'colombia':
+          {
+            check = this.countryData[0].colombia.isEmailRequired;
+          }
+          break;
+          
+          case'southkorea':
+          {
+            check = this.countryData[0].southkorea.isEmailRequired;
+          }
+          break;
           default:
             check = false;
         }
@@ -75,6 +101,30 @@ export class UpdateReceiverComponent implements OnInit {
               check = this.countryData[0].india.isLastNameRequired;
             }
             break;
+            case 'japan':
+              {
+                check = this.countryData[0].japan.isLastNameRequired;
+              }
+              break;
+              
+              case 'canada':
+              {
+                check = this.countryData[0].canada.isLastNameRequired;
+              }
+              break;
+              
+              case'colombia':
+              {
+                check = this.countryData[0].colombia.isLastNameRequired;
+              }
+              break;
+              
+              case'southkorea':
+              {
+                check = this.countryData[0].southkorea.isLastNameRequired;
+              }
+              break;
+    
           default:
             check = false;
         }
@@ -108,8 +158,9 @@ export class UpdateReceiverComponent implements OnInit {
     });
   }
   update(data:any){
-    console.log("new form data ", data);
-    this.receiver.updateReceiverById(this.router.snapshot.params.id,data)
+    console.log("new form data ", data); // all data except selectedCountry from the form 
+    console.warn("value",{country:this.selectedCountry, ...data});//adding country with other data that we are getting from the form 
+    this.receiver.updateReceiverById(this.router.snapshot.params.id,{country:this.selectedCountry, ...data})
     .subscribe((result)=>{
       console.log(result);
       alert("receiver updated !");
@@ -119,5 +170,14 @@ export class UpdateReceiverComponent implements OnInit {
     })
 
   }
+  toggleDropdown() {
+    this.showDropdown = !this.showDropdown;
+  }
+ 
+  selectCountry(country: string) {
+    this.selectedCountry = country;
+    this.showDropdown = false;
+  }
+
 
 }

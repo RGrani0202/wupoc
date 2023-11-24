@@ -10,20 +10,25 @@ import { KeyValue } from "@angular/common";
   templateUrl: './add-receiver.component.html',
   styleUrls: ['./add-receiver.component.css']
 })
+
+
 export class AddReceiverComponent implements OnInit {
   selectedCountry: string;
   countryData: any = {};
   countries: any = [];
   receiverList: Array<Object> = [];
   types = ["Mobile", "Telephone"];
+  imgurl:any="assets/placeholder.png";
+  showDropdown: boolean = false;
 
   constructor(private router: Router, private auth: AuthService, 
     private receiver: ReceiversService, private http: HttpClient) {
-
-  }
-
+      this.selectedCountry="Select Country";
+    }
   continue(value: any) {
-    this.receiver.saveReceiver(value).subscribe((result) => {
+
+    console.log("value",{country:this.selectedCountry, ...value}); // adding selected country with other values to post the data 
+    this.receiver.saveReceiver({country:this.selectedCountry, ...value}).subscribe((result) => {
       console.log(result);
       alert("receiver added !");
       this.router.navigate(['/my-receivers']);
@@ -39,18 +44,46 @@ export class AddReceiverComponent implements OnInit {
     // console.log(this.selectedCountry);
   
     if (country && this.countryData) {
+      console.log(country);
+      
       switch (country) {
         case 'usa': {
           check = this.countryData[0].usa.isEmailRequired;
+          
+          console.warn(this.countryData[0][country].isEmailRequired);
+          
         }
           break;
-        // console.log(this.countryData[0].usa.isLastNameRequired);
+           
           case 'india':
-          // console.log(this.countryData[0].india.isLastNameRequired);
           {
             check = this.countryData[0].india.isEmailRequired;
           }
           break;
+          case 'japan':
+          {
+            check = this.countryData[0].japan.isEmailRequired;
+          }
+          break;
+          
+          case 'canada':
+          {
+            check = this.countryData[0].canada.isEmailRequired;
+          }
+          break;
+          
+          case'colombia':
+          {
+            check = this.countryData[0].colombia.isEmailRequired;
+          }
+          break;
+          
+          case'southkorea':
+          {
+            check = this.countryData[0].southkorea.isEmailRequired;
+          }
+          break;
+
         default:
           check = false;
       }}
@@ -68,7 +101,7 @@ export class AddReceiverComponent implements OnInit {
     if (country && this.countryData) {
       switch (country) {
         case 'usa': {
-          check = this.countryData[0].usa.isLastNameRequired;
+          check = this.countryData[0].usa.isLastNameRequired;    
         }
           break;
 
@@ -78,6 +111,30 @@ export class AddReceiverComponent implements OnInit {
             check = this.countryData[0].india.isLastNameRequired;
           }
           break;
+          case 'japan':
+          {
+            check = this.countryData[0].japan.isLastNameRequired;
+          }
+          break;
+          
+          case 'canada':
+          {
+            check = this.countryData[0].canada.isLastNameRequired;
+          }
+          break;
+          
+          case'colombia':
+          {
+            check = this.countryData[0].colombia.isLastNameRequired;
+          }
+          break;
+          
+          case'southkorea':
+          {
+            check = this.countryData[0].southkorea.isLastNameRequired;
+          }
+          break;
+
         default:
           check = false;
       }
@@ -105,26 +162,31 @@ export class AddReceiverComponent implements OnInit {
   ngOnInit(): void {
     this.receiver.getConfig().subscribe((data: Array<Object>) => {
       this.countryData = data;                           // all country data 
-      console.warn("data", this.countryData);
+      console.warn("data", this.countryData[0]);
       this.countries = Object.keys(this.countryData[0]); //get the countries
       console.log(this.countries);
+      
+      
       console.log("country", this.selectedCountry);
-
-      // console.warn(this.countryData);
-
     });
-    // this.receiver.saveReceiver();
     this.receiver.getReceivers().subscribe((result: Array<Object>) => {
       this.receiverList = result;
-      // console.log(result);
-
-      console.log(this.receiverList);
+      // console.log(result); console.log(this.receiverList);
     })
   }
   ngDocheck(): void {
     console.log(this.isEmailRequired());
 
 
+  }
+
+  toggleDropdown() {
+    this.showDropdown = !this.showDropdown;
+  }
+ 
+  selectCountry(country: string) {
+    this.selectedCountry = country;
+    this.showDropdown = false;
   }
 
 

@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import{ReceiversService} from "../services/receivers.service";
+
 import { Router } from '@angular/router';
 
 
 @Component({
   selector: 'app-my-receivers',
+  
   templateUrl: './my-receivers.component.html',
+ 
   styleUrls: ['./my-receivers.component.css']
 })
 export class MyReceiversComponent implements OnInit {
@@ -18,7 +21,7 @@ export class MyReceiversComponent implements OnInit {
       this.receiverList=result;
       // console.log(result);
       
-      console.log(this.receiverList);
+      console.log("myreceiver", this.receiverList);
     })
   }
   deleteRes(receiverId: number){

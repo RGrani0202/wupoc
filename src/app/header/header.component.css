@@ -15,8 +15,12 @@
 }
 .header-right{
     float: right;
-    position: relative;
+    /* position: initial; */
     right: 18%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 30px;
 }
 .header-right a {
     float: left;

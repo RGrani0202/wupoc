@@ -1,20 +1,19 @@
 <header >
     <nav class="wu-header">
         <img src="https://www.westernunion.com/content/dam/wu/logo/logo.wu.big.svg" alt="logo">
-      
-        <div *ngIf="myReceiver" class="header-right">
+       <div class="header-right">
+        <div >
+            <a routerLink="send-money">Send Money</a>
+        </div>
+        <div *ngIf="myReceiver" >
             <a routerLink="my-receivers">My Receiver</a>
         </div>
-        <div *ngIf="addReceiver" class="header-right">
+        <div *ngIf="addReceiver" >
             <a routerLink="add-receiver">Add Receiver</a>
         </div>
-        <!-- <div>
-            <a routerLink=""
-        </div> -->
-
         <div *ngIf="logOut" class="logout">
             <a (click)="logfun()">LogOut</a>
         </div>
-       
+    </div>
     </nav>
 </header>

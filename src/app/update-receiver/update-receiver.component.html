@@ -4,86 +4,144 @@
       <h3>Receiver's Information</h3>
       <div class="textfield email">
         <h4>For your saftey, make sure you know your receiver</h4>
-        <select
-          class="countrybox"
-          name="country"
-          [(ngModel)]="receiverById.country"
-          (ngModelChange)="onCountryChange($event)"
-          required>
-          <option hidden selected value="country">Country name</option>
-          <option *ngFor="let country of countries" [value]="country">
-            {{ country }}
-          </option></select>
-        <br/><br/>
-        
-        <div class="subHeading">
-          <h4>Receiver's Personal Information </h4>
-       </div>
-        <div class="infobox">
-          <input
-            type="text"
-            class="text-input-name"
-            name="firstname"
-            placeholder="Receiver's firstname"
-            [(ngModel)]="receiverById.firstname"
-          />
-          <br /><br />
-          
-          <input
-            required
-            *ngIf="isLastNameRequired()"
-            type="text"
-            class="text-input-name"
-            name="lastname"
-            placeholder="Receiver's lastname"
-            [(ngModel)]="receiverById.lastname"
-          />
-          <br /><br />
-              
-</div>
-<div class="infobox">
+        <div class="custom-dropdown countrybox">
+          <div class="selected-country" (click)="toggleDropdown()">
+            <img
+              [src]="countryData[0][selectedCountry]?.img"
+              alt="{{ selectedCountry }}"
+              class="country-flag"
+            />
+            {{ selectedCountry }}
+          </div>
+          <div class="dropdown-list" *ngIf="showDropdown">
+            <div
+              *ngFor="let country of countries"
+              (click)="selectCountry(country)"
+            >
+              <img
+                [src]="countryData[0][country]?.img"
+                alt="{{ country }}"
+                class="country-flag"
+              />
+              {{ country }}
+            </div>
+          </div>
+        </div>
+        <br /><br />
 
-          <input
-          required
-          *ngIf="isEmailRequired()"
-          type="email"
-          class="text-input-middlename"
-          name="email"
-          placeholder="Receiver's email"
-            [(ngModel)]="receiverById.email"
-          />
-          <br /><br />
+        <div class="subHeading">
+          <h4>Receiver's Personal Information</h4>
         </div>
 
+        <div class="infobox">
+          <div class="container">
+            <ng-container>
+              <input
+                required
+                #firstname="ngModel"
+                type="text"
+                class="text-input-name"
+                name="firstname"
+                placeholder="Receiver's firstname"
+                [(ngModel)]="receiverById.firstname"
+              />
+              <div
+                *ngIf="!(firstname.invalid && firstname.touched)"
+                class="error1"
+              >
+                optional
+              </div>
+              <div *ngIf="firstname.invalid && firstname.touched" class="error">
+                firstName required
+              </div>
+            </ng-container>
+          </div>
+
+          <div class="container">
+            <ng-container *ngIf="isLastNameRequired()">
+              <input
+                required
+                #lastname="ngModel"
+                type="text"
+                class="text-input-name"
+                name="lastname"
+                placeholder="Receiver's lastname"
+                [(ngModel)]="receiverById.lastname"
+              />
+              <div
+                *ngIf="!(lastname.invalid && lastname.touched)"
+                class="error1"
+              >
+                optional
+              </div>
+              <div *ngIf="lastname.invalid && lastname.touched" class="error">
+                lastName required
+              </div>
+            </ng-container>
+          </div>
+        </div>
+        <div class="infobox container-email">
+          <ng-container *ngIf="isEmailRequired()">
+            <input
+              required
+              #email="ngModel"
+              type="email"
+              class="text-input-middlename"
+              name="email"
+              placeholder="Receiver's email"
+              [(ngModel)]="receiverById.email"
+            />
+            <div *ngIf="!(email.invalid && email.touched)" class="error1">
+              optional
+            </div>
+            <div *ngIf="email.invalid && email.touched" class="error">
+              email required
+            </div>
+          </ng-container>
+        </div>
+        <br /><br />
+
         <div class="endbox">
-        <select name="type"  class="text-input-type" [(ngModel)]="receiverById.type">
-          <option value="" disabled selected>Type</option>
-          <option *ngFor="let type of types" [value]="type">
-            {{ type }}
-          </option>
-        </select>
-        <br /><br />
-        <input
-          type="text"
-          name="countrycode"
-          placeholder="country code"
-          [(ngModel)]="receiverById.countrycode"
-        />
-        <br /><br />
+          <select
+            name="type"
+            class="text-input-type"
+            [(ngModel)]="receiverById.type"
+          >
+            <option value="" disabled selected>Type</option>
+            <option *ngFor="let type of types" [value]="type">
+              {{ type }}
+            </option>
+          </select>
+          <br /><br />
+          <input
+            type="text"
+            name="countrycode"
+            placeholder="country code"
+            [(ngModel)]="receiverById.countrycode"
+          />
 
-        <input
-          type="text"
-          class="text-input-no"
-          name="mobileno"
-          placeholder="Receiver's mobileno (optional)"
-          [(ngModel)]="receiverById.mobileno"
-        /><br /><br />
-      </div>
-      </div>
+          <br /><br />
 
+          <input
+            required
+            #mobileno="ngModel"
+            type="text"
+            class="text-input-no"
+            name="mobileno"
+            placeholder="Receiver's mobileno"
+            [(ngModel)]="receiverById.mobileno"
+          />
+          <div *ngIf="!(mobileno.invalid && mobileno.touched)" class="errorr1">
+            optional
+          </div>
+          <div *ngIf="mobileno.invalid && mobileno.touched" class="errorr">
+            Mobile number required
+          </div>
+        </div>
+      </div>
 
       <div class="update">
-        <button type="submit">Update Receiver</button>
+        <button type="submit" >Update Receiver</button>
       </div>
 
       <div class="cancel">

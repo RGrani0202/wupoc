@@ -31,7 +31,7 @@ describe('AuthGuard', () => {
     expect(guard).toBeTruthy();
   });
  
-  it('should return false and navigate to "/" if not logged in', () => {
+  it('should return true and navigate to "/" if  logged in', () => {
     authService.checkLogin.and.returnValue(false);
  
     const result = guard.canActivate(undefined!, undefined!);

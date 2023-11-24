@@ -12,6 +12,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { UpdateReceiverComponent } from './update-receiver/update-receiver.component';
+import { SendMoneyComponent } from './send-money/send-money.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { UpdateReceiverComponent } from './update-receiver/update-receiver.compo
     AddReceiverComponent,
     MyReceiversComponent,
     PageNotFoundComponent,
-    UpdateReceiverComponent
+    UpdateReceiverComponent,
+    SendMoneyComponent
   ],
   imports: [
     BrowserModule,

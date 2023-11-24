@@ -40,7 +40,8 @@ export class HeaderComponent implements OnInit {
           this.logOut = true;
 
         }
-
+        
+      
 
         if (value.url === "/add-receiver") {
           this.myReceiver = true;
@@ -54,6 +55,7 @@ export class HeaderComponent implements OnInit {
           this.addReceiver = true;
         }
 
+
         else {
           this.addReceiver = false;
 
@@ -61,7 +63,11 @@ export class HeaderComponent implements OnInit {
       }
 
 
+      if(value.url === '/send-money'){
+        this.addReceiver=true;
+        this.myReceiver=true;
 
+      }
 
     })
   }

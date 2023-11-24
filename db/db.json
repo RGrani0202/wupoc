@@ -68,12 +68,54 @@
       "id": 8
     },
     {
-      "country": "japan",
+      "country": "india",
       "firstname": "oiuytresa",
       "type": "Mobile",
       "countrycode": "98",
       "mobileno": "98765432",
+      "lastname": "iuytfd",
+      "email": "kjhv",
       "id": 9
+    },
+    {
+      "firstname": "iuytre",
+      "type": "Mobile",
+      "countrycode": "98",
+      "mobileno": "0808",
+      "id": 10
+    },
+    {
+      "firstname": "lkjhgfd",
+      "type": "Mobile",
+      "countrycode": "98",
+      "mobileno": "9876543",
+      "email": "kjhgfdxz",
+      "id": 11
+    },
+    {
+      "firstname": "oiuytre",
+      "type": "Mobile",
+      "countrycode": "09",
+      "mobileno": "098765432",
+      "id": 12
+    },
+    {
+      "country": "japan",
+      "firstname": "oiuytre",
+      "type": "Mobile",
+      "countrycode": "98",
+      "mobileno": "987654321",
+      "id": 13
+    },
+    {
+      "country": "india",
+      "firstname": "ranii",
+      "type": "Mobile",
+      "countrycode": "98",
+      "mobileno": "98768765443",
+      "lastname": "",
+      "email": "jhgfc",
+      "id": 14
     }
   ],
   "country": [
@@ -82,17 +124,37 @@
         "isFirstNameRequired": true,
         "isLastNameRequired": false,
         "isEmailRequired": true,
-        "img":"/wureceiver/src/assetsunitedstates.png"
+        "img": "assets/unitedstates.png"
       },
       "india": {
         "isFirstNameRequired": true,
         "isLastNameRequired": true,
-        "isEmailRequired": true
+        "isEmailRequired": true,
+        "img": "assets/india.png"
       },
       "japan": {
         "isFirstNameRequired": true,
         "isLastNameRequired": false,
-        "isEmailRequired": false
+        "isEmailRequired": false,
+        "img": "assets/japan.png"
+      },
+      "canada": {
+        "isFirstNameRequired": true,
+        "isLastNameRequired": false,
+        "isEmailRequired": true,
+        "img": "assets/canada.png"
+      },
+      "colombia": {
+        "isFirstNameRequired": true,
+        "isLastNameRequired": true,
+        "isEmailRequired": true,
+        "img": "assets/colombia.png"
+      },
+      "southkorea": {
+        "isFirstNameRequired": true,
+        "isLastNameRequired": true,
+        "isEmailRequired": false,
+        "img": "assets/southkorea.png"
       }
     }
   ]
